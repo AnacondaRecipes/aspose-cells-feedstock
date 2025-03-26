@@ -1,0 +1,43 @@
+{% set name = "aspose-cells" %}
+{% set version = "25.3.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aspose_cells-{{ version }}.tar.gz
+  sha256: 907b3433b5063e78179ec0075c6bf676fedeb03ce49d0332031750b9646e690b
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - jpype1 >=1.2.1
+
+test:
+  imports:
+    - asposecells
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://products.aspose.com/cells/python-java
+  summary: A powerful library for manipulating and converting Excel (XLS, XLSX, XLSB), ODS, CSV and HTML files.
+  license: LICENSE
+
+extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/71170
+    reason: Client request
+  recipe-maintainers:
+    - ianaobi
