@@ -34,7 +34,7 @@ test:
 about:
   home: https://products.aspose.com/cells/python-java
   summary: A powerful library for manipulating and converting Excel (XLS, XLSX, XLSB), ODS, CSV and HTML files.
-  license: LICENSE
+  # license: LICENSE
   dev_url: https://products.aspose.com/cells/python-java
   doc_url: https://github.com/aspose-cells/Aspose.Cells-Doc-md/blob/master/README.md
 
